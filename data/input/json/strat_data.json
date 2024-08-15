@@ -1,0 +1,26 @@
+{
+  "strat_elev": [
+    -12.73,
+    -12.030000000000001,
+    -10.129999999999999,
+    -7.829999999999999,
+    -7.13,
+    -5.829999999999999,
+    -5.13,
+    -2.13,
+    -1.2299999999999995,
+    0.27
+  ],
+  "material": [
+    "Very Dense G",
+    "Soft Silt",
+    "Firm Silt",
+    "Very Soft Silt",
+    "Firm Silt",
+    "Soft Silt",
+    "Soft Peat",
+    "Peat",
+    "Very Soft Peat",
+    "Soft Clay"
+  ]
+}

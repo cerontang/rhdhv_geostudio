@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GSIData Version="11.05" AppVersion="23.1.1.829">
+  <FileInfo FileVersion="11.05" AppVersion="23.01" FileBuildNumber="829" Title="Python Geostudio Template" Author="Siu Sang Ceron Tang" LastAuthor="Siu Sang Ceron Tang" RevNumber="3" Date="13/11/2023" Time="11:44:14" />
+  <BCs Len="8">
+    <BC ID="1" Name="Fixed X" Color="RGB=(192,0,0)" XDisp="DispDisplacementX(Variability=Constant,Value=0)" YDisp="ForceDispUndefined()" />
+    <BC ID="2" Name="Fixed Y" Color="RGB=(192,0,0)" XDisp="ForceDispUndefined()" YDisp="DispDisplacementY(Variability=Constant,Value=0)" />
+    <BC ID="3" Name="Fixed X/Y" Color="RGB=(192,0,0)" XDisp="DispDisplacementX(Variability=Constant,Value=0)" YDisp="DispDisplacementY(Variability=Constant,Value=0)" />
+    <BC ID="4" Name="Zero Pressure" Color="RGB=(192,0,0)" Hydraulic="HydPressureHead(Variability=Constant,Value=0)" />
+    <BC ID="5" Name="Drainage" Color="RGB=(128,0,128)" Hydraulic="HydTotalFlux(Variability=Constant,Value=0,Review=true)" />
+    <BC ID="6" Name="Unit Concentration" Color="RGB=(192,0,0)" Contaminant="ContamConcentrationVsTime(Variability=Constant,Value=1e-06)" />
+    <BC ID="7" Name="Zero Rotation" Color="RGB=(192,0,0)" Rotation="ZeroRotation()" />
+    <BC ID="8" Name="Atmospheric - Zero" Color="RGB=(192,0,0)" Air="AirPressure(Variability=Constant,Value=0)" />
+  </BCs>
+  <Coordinates>
+    <EngCoords HorzScale="200" XPageLeft="-16.667" YPageBottom="-16.667" XPageRight="158.333" YPageTop="116.6663333333333" XPageOrg="16.667" YPageOrg="16.667" MaxSnapDist="20" UnitSystem="Metric" LockScales="false" VertScale="200" />
+    <PageCoords Units="in" PageWidth="10.5" PageHeight="8" PageXOrg="3.280905511811024" PageYOrg="3.280905511811024" />
+  </Coordinates>
+  <Geometries Len="1">
+    <Geometry>
+      <Name>2D Geometry</Name>
+      <Points Len="1">
+        <Point ID="1" X="0" Y="0" Pinned="true" />
+      </Points>
+      <ResultGraphs Len="16">
+        <ResultGraph>
+          <GraphOptions>
+            <Font Height="-12" OutPrecision="1" ClipPrecision="2" Quality="1" PitchAndFamily="26" FaceName="Arial" />
+            <Symbols>true</Symbols>
+          </GraphOptions>
+          <Name>Factor of Safety vs. Lambda</Name>
+          <SourceType>SlopeConvergence</SourceType>
+          <TimeSelection>All</TimeSelection>
+          <Y>ViewSlipFOS</Y>
+          <X>Lambda</X>
+          <IndepUnit Missing="true" />
+        </ResultGraph>
+        <ResultGraph>
+          <GraphOptions>
+            <Font Height="-12" OutPrecision="1" ClipPrecision="2" Quality="1" PitchAndFamily="26" FaceName="Arial" />
+            <Symbols>true</Symbols>
+          </GraphOptions>
+          <Name>Factor of Safety vs. Time</Name>
+          <SourceType>SlopeSlipSurface</SourceType>
+          <TimeSelection>All</TimeSelection>
+          <Y>ViewSlipFOS</Y>
+          <X>Time</X>
+          <IndepUnit Missing="true" />
+        </ResultGraph>
+        <ResultGraph>
+          <GraphOptions>
+            <Font Height="-12" OutPrecision="1" ClipPrecision="2" Quality="1" PitchAndFamily="26" FaceName="Arial" />
+            <Symbols>true</Symbols>
+          </GraphOptions>
+          <Name>Velocity vs. Time</Name>
+          <SourceType>SlopeSlipSurface</SourceType>
+          <TimeSelection>All</TimeSelection>
+          <Y>Velocity</Y>
+          <X>Time</X>
+          <IndepUnit Missing="true" />
+        </ResultGraph>
+        <ResultGraph>
+          <GraphOptions>
+            <Font Height="-12" OutPrecision="1" ClipPrecision="2" Quality="1" PitchAndFamily="26" FaceName="Arial" />
+            <Symbols>true</Symbols>
+          </GraphOptions>
+          <Name>Deformation vs. Time</Name>
+          <SourceType>SlopeSlipSurface</SourceType>
+          <TimeSelection>All</TimeSelection>
+          <Y>Deformation</Y>
+          <X>Time</X>
+          <IndepUnit Missing="true" />
+        </ResultGraph>
+        <ResultGraph>
+          <GraphOptions>
+            <Font Height="-12" OutPrecision="1" ClipPrecision="2" Quality="1" PitchAndFamily="26" FaceName="Arial" />
+            <Symbols>true</Symbols>
+          </GraphOptions>
+          <Name>Average Acceleration vs. Time</Name>
+          <SourceType>SlopeSlipSurface</SourceType>
+          <TimeSelection>All</TimeSelection>
+          <Y>AverageAcceleration</Y>
+          <X>Time</X>
+          <IndepUnit Missing="true" />
+        </ResultGraph>
+        <ResultGraph>
+          <GraphOptions>
+            <Font Height="-12" OutPrecision="1" ClipPrecision="2" Quality="1" PitchAndFamily="26" FaceName="Arial" />
+            <Symbols>true</Symbols>
+          </GraphOptions>
+          <Name>Factor of Safety vs. Average Acceleration</Name>
+          <SourceType>SlopeSlipSurface</SourceType>
+          <TimeSelection>All</TimeSelection>
+          <Y>ViewSlipFOS</Y>
+          <X>AverageAcceleration</X>
+          <IndepUnit Missing="true" />
+        </ResultGraph>
+        <ResultGraph>
+          <GraphOptions>
+            <Font Height="-12" OutPrecision="1" ClipPrecision="2" Quality="1" PitchAndFamily="26" FaceName="Arial" />
+            <Symbols>true</Symbols>
+          </GraphOptions>
+          <Name>X-Conductivity vs. Matric Suction</Name>
+          <SourceType>ConvergenceStep</SourceType>
+          <TimeSelection>Last</TimeSelection>
+          <Y>WaterConductivityX</Y>
+          <X>MatricSuction</X>
+          <IndepUnit Missing="true" />
+        </ResultGraph>
+        <ResultGraph>
+          <GraphOptions>
+            <Font Height="-12" OutPrecision="1" ClipPrecision="2" Quality="1" PitchAndFamily="26" FaceName="Arial" />
+            <YLog>gsw::eFALSE</YLog>
+            <Rotate90>gsw::eFALSE</Rotate90>
+            <Symbols>true</Symbols>
+          </GraphOptions>
+          <Name>Relative Displacement Error vs. Iteration</Name>
+          <SourceType>ConvergenceIteration</SourceType>
+          <TimeSelection>Last</TimeSelection>
+          <Y>RelativeDisplacementError</Y>
+          <X>Iteration</X>
+          <IndepUnit Missing="true" />
+        </ResultGraph>
+        <ResultGraph>
+          <GraphOptions>
+            <Font Height="-12" OutPrecision="1" ClipPrecision="2" Quality="1" PitchAndFamily="26" FaceName="Arial" />
+            <YLog>gsw::eFALSE</YLog>
+            <Rotate90>gsw::eFALSE</Rotate90>
+            <Symbols>true</Symbols>
+          </GraphOptions>
+          <Name>Relative Residual Force Error vs. Iteration</Name>
+          <SourceType>ConvergenceIteration</SourceType>
+          <TimeSelection>Last</TimeSelection>
+          <Y>RelativeResidualForceError</Y>
+          <X>Iteration</X>
+          <IndepUnit Missing="true" />
+        </ResultGraph>
+        <ResultGraph>
+          <GraphOptions>
+            <Font Height="-12" OutPrecision="1" ClipPrecision="2" Quality="1" PitchAndFamily="26" FaceName="Arial" />
+            <YLog>gsw::eFALSE</YLog>
+            <Rotate90>gsw::eFALSE</Rotate90>
+            <Symbols>true</Symbols>
+          </GraphOptions>
+          <Name>Relative Unbalanced Energy Error vs. Iteration</Name>
+          <SourceType>ConvergenceIteration</SourceType>
+          <TimeSelection>Last</TimeSelection>
+          <Y>RelativeUnbalancedEnergyError</Y>
+          <X>Iteration</X>
+          <IndepUnit Missing="true" />
+        </ResultGraph>
+        <ResultGraph>
+          <GraphOptions>
+            <Font Height="-12" OutPrecision="1" ClipPrecision="2" Quality="1" PitchAndFamily="26" FaceName="Arial" />
+            <Symbols>true</Symbols>
+          </GraphOptions>
+          <Name>Relative Displacement Error vs. Strength Reduction Factor</Name>
+          <SourceType>ConvergencePartialMaterialFactor</SourceType>
+          <Y>RelativeDisplacementError</Y>
+          <X>PartialMaterialFactor</X>
+          <IndepUnit Missing="true" />
+        </ResultGraph>
+        <ResultGraph>
+          <GraphOptions>
+            <Font Height="-12" OutPrecision="1" ClipPrecision="2" Quality="1" PitchAndFamily="26" FaceName="Arial" />
+            <Symbols>true</Symbols>
+          </GraphOptions>
+          <Name>Relative Residual Force Error vs. Strength Reduction Factor</Name>
+          <SourceType>ConvergencePartialMaterialFactor</SourceType>
+          <Y>RelativeResidualForceError</Y>
+          <X>PartialMaterialFactor</X>
+          <IndepUnit Missing="true" />
+        </ResultGraph>
+        <ResultGraph>
+          <GraphOptions>
+            <Font Height="-12" OutPrecision="1" ClipPrecision="2" Quality="1" PitchAndFamily="26" FaceName="Arial" />
+            <Symbols>true</Symbols>
+          </GraphOptions>
+          <Name>Relative Unbalanced Energy Error vs. Strength Reduction Factor</Name>
+          <SourceType>ConvergencePartialMaterialFactor</SourceType>
+          <Y>RelativeUnbalancedEnergyError</Y>
+          <X>PartialMaterialFactor</X>
+          <IndepUnit Missing="true" />
+        </ResultGraph>
+        <ResultGraph>
+          <GraphOptions>
+            <Font Height="-12" OutPrecision="1" ClipPrecision="2" Quality="1" PitchAndFamily="26" FaceName="Arial" />
+            <Symbols>true</Symbols>
+          </GraphOptions>
+          <Name>||U|| vs. Strength Reduction Factor</Name>
+          <SourceType>StressRedistribution</SourceType>
+          <TimeSelection>All</TimeSelection>
+          <Y>VectorNormDisplacements</Y>
+          <X>PartialMaterialFactor</X>
+          <IndepUnit Missing="true" />
+        </ResultGraph>
+        <ResultGraph>
+          <GraphOptions>
+            <Font Height="-12" OutPrecision="1" ClipPrecision="2" Quality="1" PitchAndFamily="26" FaceName="Arial" />
+            <Symbols>true</Symbols>
+          </GraphOptions>
+          <Name>Residual Error vs. Strength Reduction Factor</Name>
+          <SourceType>StressRedistribution</SourceType>
+          <Y>RelativeResidualForceError</Y>
+          <X>PartialMaterialFactor</X>
+          <IndepUnit Missing="true" />
+        </ResultGraph>
+        <ResultGraph>
+          <GraphOptions>
+            <Font Height="-12" OutPrecision="1" ClipPrecision="2" Quality="1" PitchAndFamily="26" FaceName="Arial" />
+            <Symbols>true</Symbols>
+          </GraphOptions>
+          <Name>Stress Iteration Count vs. Strength Reduction Factor</Name>
+          <SourceType>ConvergencePartialMaterialFactor</SourceType>
+          <Y>StressIterationCount</Y>
+          <X>PartialMaterialFactor</X>
+          <IndepUnit Missing="true" />
+        </ResultGraph>
+      </ResultGraphs>
+      <SketchItems>
+        <Images Len="1">
+          <Image>
+            <FileName>OBJECT</FileName>
+          </Image>
+        </Images>
+        <AxisOptions BottomAxisTitle="Distance" LeftAxisTitle="Elevation" TopAxisTitle="Distance" RightAxisTitle="Elevation" />
+      </SketchItems>
+      <PointLabel Len="1">
+        <Point ID="1" Value="1" />
+      </PointLabel>
+      <Precision>7,7,7</Precision>
+    </Geometry>
+  </Geometries>
+  <View>
+    <PreferencesTable Len="3">
+      <Preferences>
+        <XGridSpacing>1</XGridSpacing>
+        <YGridSpacing>1</YGridSpacing>
+        <ShowGrid>true</ShowGrid>
+        <SnapToGrid>true</SnapToGrid>
+        <RightRuler>true</RightRuler>
+        <TopRuler>true</TopRuler>
+        <Layers>3</Layers>
+        <Points>true</Points>
+        <Regions>true</Regions>
+        <PointNumbers>true</PointNumbers>
+        <RegionNumbers>true</RegionNumbers>
+        <RegionLabelOption>Number</RegionLabelOption>
+        <GroundSurfaceLine>true</GroundSurfaceLine>
+        <Mesh>false</Mesh>
+        <MaterialColor>true</MaterialColor>
+        <MaterialBoundary>false</MaterialBoundary>
+        <MeshLabels>false</MeshLabels>
+        <NodeConvergence>false</NodeConvergence>
+        <ReviewNodesFlipped>false</ReviewNodesFlipped>
+        <SketchItems>true</SketchItems>
+        <Pictures>true</Pictures>
+        <Axis>true</Axis>
+        <CtranBC>Contamination</CtranBC>
+        <QuakeBC>Displacement</QuakeBC>
+        <SeepBC>Hydraulic</SeepBC>
+        <SigmaBC>Displacement</SigmaBC>
+        <SlopeBC Missing="true" />
+        <TempBC>Thermal</TempBC>
+        <PWP>true</PWP>
+        <SlipSurfaces>true</SlipSurfaces>
+        <LineLoads>true</LineLoads>
+        <Reinforcement>true</Reinforcement>
+        <PressureLines>true</PressureLines>
+        <PressureLineShading>true</PressureLineShading>
+        <TensionCrackLine>true</TensionCrackLine>
+        <TensionCrackShading>true</TensionCrackShading>
+        <SlipSurfaceShading>true</SlipSurfaceShading>
+        <SlipSurfaceSlices>true</SlipSurfaceSlices>
+        <SlipSurfaceColor>RGB=(0,0,0)</SlipSurfaceColor>
+        <SlipSurfaceLineThickness>1</SlipSurfaceLineThickness>
+        <MultipleSlipSurfaces>false</MultipleSlipSurfaces>
+        <SigFiguresFofS>4</SigFiguresFofS>
+        <AllFofSValues>false</AllFofSValues>
+        <SafetyMap>false</SafetyMap>
+        <FOSContours>true</FOSContours>
+        <FOSContourShading>true</FOSContourShading>
+        <ViewPondingArrows>true</ViewPondingArrows>
+        <PWPLineThickness>Thin</PWPLineThickness>
+        <PartialFactorsOption>OverdesignFactor</PartialFactorsOption>
+        <Particles>true</Particles>
+        <InitialConditions>true</InitialConditions>
+        <BoundaryConditions>true</BoundaryConditions>
+        <InitialWaterTable>true</InitialWaterTable>
+        <CoverDetail>true</CoverDetail>
+        <ViewImperviousBarriers>true</ViewImperviousBarriers>
+        <BodyLoad>true</BodyLoad>
+        <StructuralElements>true</StructuralElements>
+        <TrussElements>true</TrussElements>
+        <HistoryPoints>true</HistoryPoints>
+        <Vectors>true</Vectors>
+        <Contours>true</Contours>
+        <ContourShading>false</ContourShading>
+        <TransientContours>true</TransientContours>
+        <TransientContourType>PoreWaterPressure</TransientContourType>
+        <FlowPath>true</FlowPath>
+        <Deformation>true</Deformation>
+        <DeformationShading>false</DeformationShading>
+        <LiquefactionConditions>false</LiquefactionConditions>
+        <LiquefiedElementColor>RGB=(255,255,0)</LiquefiedElementColor>
+        <ISOLineMode>false</ISOLineMode>
+      </Preferences>
+      <Preferences>
+        <XGridSpacing>1</XGridSpacing>
+        <YGridSpacing>1</YGridSpacing>
+        <ShowGrid>false</ShowGrid>
+        <SnapToGrid>false</SnapToGrid>
+        <RightRuler>true</RightRuler>
+        <TopRuler>true</TopRuler>
+        <Layers>3</Layers>
+        <Points>false</Points>
+        <Regions>false</Regions>
+        <PointNumbers>false</PointNumbers>
+        <RegionNumbers>false</RegionNumbers>
+        <RegionLabelOption>Number</RegionLabelOption>
+        <GroundSurfaceLine>false</GroundSurfaceLine>
+        <Mesh>false</Mesh>
+        <MaterialColor>true</MaterialColor>
+        <MaterialBoundary>true</MaterialBoundary>
+        <MeshLabels>false</MeshLabels>
+        <NodeConvergence>false</NodeConvergence>
+        <ReviewNodesFlipped>false</ReviewNodesFlipped>
+        <SketchItems>true</SketchItems>
+        <Pictures>true</Pictures>
+        <Axis>true</Axis>
+        <CtranBC>Contamination</CtranBC>
+        <QuakeBC>Displacement</QuakeBC>
+        <SeepBC>Hydraulic</SeepBC>
+        <SigmaBC>Displacement</SigmaBC>
+        <SlopeBC Missing="true" />
+        <TempBC>Thermal</TempBC>
+        <PWP>true</PWP>
+        <SlipSurfaces>true</SlipSurfaces>
+        <LineLoads>true</LineLoads>
+        <Reinforcement>true</Reinforcement>
+        <PressureLines>true</PressureLines>
+        <PressureLineShading>true</PressureLineShading>
+        <TensionCrackLine>true</TensionCrackLine>
+        <TensionCrackShading>true</TensionCrackShading>
+        <SlipSurfaceShading>true</SlipSurfaceShading>
+        <SlipSurfaceSlices>true</SlipSurfaceSlices>
+        <SlipSurfaceColor>RGB=(0,255,0)</SlipSurfaceColor>
+        <SlipSurfaceLineThickness>1</SlipSurfaceLineThickness>
+        <MultipleSlipSurfaces>false</MultipleSlipSurfaces>
+        <SigFiguresFofS>4</SigFiguresFofS>
+        <AllFofSValues>false</AllFofSValues>
+        <SafetyMap>false</SafetyMap>
+        <FOSContours>true</FOSContours>
+        <FOSContourShading>true</FOSContourShading>
+        <ViewPondingArrows>true</ViewPondingArrows>
+        <PWPLineThickness>Thin</PWPLineThickness>
+        <PartialFactorsOption>OverdesignFactor</PartialFactorsOption>
+        <Particles>true</Particles>
+        <InitialConditions>false</InitialConditions>
+        <BoundaryConditions>true</BoundaryConditions>
+        <InitialWaterTable>false</InitialWaterTable>
+        <CoverDetail>false</CoverDetail>
+        <ViewImperviousBarriers>true</ViewImperviousBarriers>
+        <BodyLoad>false</BodyLoad>
+        <StructuralElements>true</StructuralElements>
+        <TrussElements>true</TrussElements>
+        <HistoryPoints>true</HistoryPoints>
+        <Vectors>true</Vectors>
+        <Contours>true</Contours>
+        <ContourShading>false</ContourShading>
+        <TransientContours>true</TransientContours>
+        <TransientContourType>PoreWaterPressure</TransientContourType>
+        <FlowPath>false</FlowPath>
+        <Deformation>true</Deformation>
+        <DeformationShading>false</DeformationShading>
+        <LiquefactionConditions>false</LiquefactionConditions>
+        <LiquefiedElementColor>RGB=(255,255,0)</LiquefiedElementColor>
+        <ISOLineMode>false</ISOLineMode>
+      </Preferences>
+      <Preferences>
+        <XGridSpacing>1</XGridSpacing>
+        <YGridSpacing>1</YGridSpacing>
+        <ShowGrid>true</ShowGrid>
+        <SnapToGrid>true</SnapToGrid>
+        <RightRuler>true</RightRuler>
+        <TopRuler>true</TopRuler>
+        <Layers>3</Layers>
+        <Points>true</Points>
+        <Regions>true</Regions>
+        <PointNumbers>true</PointNumbers>
+        <RegionNumbers>true</RegionNumbers>
+        <RegionLabelOption>Material</RegionLabelOption>
+        <GroundSurfaceLine>false</GroundSurfaceLine>
+        <Mesh>false</Mesh>
+        <MaterialColor>true</MaterialColor>
+        <MaterialBoundary>true</MaterialBoundary>
+        <MeshLabels>false</MeshLabels>
+        <NodeConvergence>true</NodeConvergence>
+        <ReviewNodesFlipped>false</ReviewNodesFlipped>
+        <SketchItems>false</SketchItems>
+        <Pictures>false</Pictures>
+        <Axis>false</Axis>
+        <SlopeBC Missing="true" />
+        <PWP>false</PWP>
+        <SlipSurfaces>false</SlipSurfaces>
+        <CurrentSlipSurface>false</CurrentSlipSurface>
+        <LineLoads>false</LineLoads>
+        <Reinforcement>false</Reinforcement>
+        <PressureLines>false</PressureLines>
+        <PressureLineShading>false</PressureLineShading>
+        <TensionCrackLine>false</TensionCrackLine>
+        <TensionCrackShading>false</TensionCrackShading>
+        <SlipSurfaceShading>false</SlipSurfaceShading>
+        <SlipSurfaceSlices>false</SlipSurfaceSlices>
+        <SlipSurfaceColor>RGB=(0,255,0)</SlipSurfaceColor>
+        <SlipSurfaceLineThickness>1</SlipSurfaceLineThickness>
+        <MultipleSlipSurfaces>false</MultipleSlipSurfaces>
+        <SigFiguresFofS>4</SigFiguresFofS>
+        <AllFofSValues>false</AllFofSValues>
+        <SafetyMap>false</SafetyMap>
+        <CriticalSlipLine>false</CriticalSlipLine>
+        <FOSContours>false</FOSContours>
+        <FOSContourShading>false</FOSContourShading>
+        <ViewPondingArrows>false</ViewPondingArrows>
+        <PWPLineThickness>Thin</PWPLineThickness>
+        <PartialFactorsOption>OverdesignFactor</PartialFactorsOption>
+        <Particles>false</Particles>
+        <InitialConditions>false</InitialConditions>
+        <BoundaryConditions>false</BoundaryConditions>
+        <InitialWaterTable>false</InitialWaterTable>
+        <CoverDetail>false</CoverDetail>
+        <ViewImperviousBarriers>false</ViewImperviousBarriers>
+        <BodyLoad>false</BodyLoad>
+        <StructuralElements>false</StructuralElements>
+        <TrussElements>false</TrussElements>
+        <HistoryPoints>false</HistoryPoints>
+        <Vectors>false</Vectors>
+        <Contours>false</Contours>
+        <ContourShading>false</ContourShading>
+        <TransientContours>false</TransientContours>
+        <TransientContourType>PoreWaterPressure</TransientContourType>
+        <FlowPath>false</FlowPath>
+        <Deformation>false</Deformation>
+        <DeformationShading>false</DeformationShading>
+        <LiquefactionConditions>false</LiquefactionConditions>
+        <LiquefiedElementColor>RGB=(255,255,0)</LiquefiedElementColor>
+        <ISOLineMode>false</ISOLineMode>
+      </Preferences>
+    </PreferencesTable>
+    <TransientContours Len="1">
+      <TransientContour>
+        <Name>New Isoline</Name>
+      </TransientContour>
+    </TransientContours>
+    <Contours Len="11">
+      <Contour>
+        <Name>Y-Total Stress</Name>
+        <Type>YTotalStress</Type>
+        <MinLevel Missing="true" />
+        <LevelIncrement Missing="true" />
+        <NumOfLines Missing="true" />
+        <StartColor>RGB=(128,192,255)</StartColor>
+        <EndColor>RGB=(255,128,128)</EndColor>
+        <ShadingMethod>WideRainbow</ShadingMethod>
+        <ShadesPerInterval>1</ShadesPerInterval>
+        <AutoContour>true</AutoContour>
+      </Contour>
+      <Contour>
+        <Name>Water Total Head</Name>
+        <Type>TotalHead</Type>
+        <MinLevel Missing="true" />
+        <LevelIncrement Missing="true" />
+        <NumOfLines Missing="true" />
+        <StartColor>RGB=(128,192,255)</StartColor>
+        <EndColor>RGB=(255,128,128)</EndColor>
+        <ShadingMethod>WideRainbow</ShadingMethod>
+        <ShadesPerInterval>1</ShadesPerInterval>
+        <AutoContour>true</AutoContour>
+      </Contour>
+      <Contour>
+        <Name>Phi</Name>
+        <Type>PhiPrime</Type>
+        <MinLevel Missing="true" />
+        <LevelIncrement Missing="true" />
+        <NumOfLines Missing="true" />
+        <StartColor>RGB=(128,192,255)</StartColor>
+        <EndColor>RGB=(255,128,128)</EndColor>
+        <ShadingMethod>WideRainbow</ShadingMethod>
+        <ShadesPerInterval>1</ShadesPerInterval>
+        <AutoContour>true</AutoContour>
+      </Contour>
+      <Contour>
+        <Name>Cohesion</Name>
+        <Type>CohesionPrime</Type>
+        <MinLevel Missing="true" />
+        <LevelIncrement Missing="true" />
+        <NumOfLines Missing="true" />
+        <StartColor>RGB=(128,192,255)</StartColor>
+        <EndColor>RGB=(255,128,128)</EndColor>
+        <ShadingMethod>WideRainbow</ShadingMethod>
+        <ShadesPerInterval>1</ShadesPerInterval>
+        <AutoContour>true</AutoContour>
+      </Contour>
+      <Contour>
+        <Name>Unit Weight</Name>
+        <Type>UnitWeight</Type>
+        <MinLevel Missing="true" />
+        <LevelIncrement Missing="true" />
+        <NumOfLines Missing="true" />
+        <StartColor>RGB=(128,192,255)</StartColor>
+        <EndColor>RGB=(255,128,128)</EndColor>
+        <ShadingMethod>WideRainbow</ShadingMethod>
+        <ShadesPerInterval>1</ShadesPerInterval>
+        <AutoContour>true</AutoContour>
+      </Contour>
+      <Contour>
+        <Name>Pore-Water Pressure</Name>
+        <Type>PoreWaterPressure</Type>
+        <MinLevel Missing="true" />
+        <LevelIncrement Missing="true" />
+        <NumOfLines Missing="true" />
+        <StartColor>RGB=(128,192,255)</StartColor>
+        <EndColor>RGB=(255,128,128)</EndColor>
+        <ShadingMethod>WideRainbow</ShadingMethod>
+        <ShadesPerInterval>1</ShadesPerInterval>
+        <AutoContour>true</AutoContour>
+      </Contour>
+      <Contour>
+        <Name>Pressure Head</Name>
+        <Type>PressureHead</Type>
+        <MinLevel Missing="true" />
+        <LevelIncrement Missing="true" />
+        <NumOfLines Missing="true" />
+        <StartColor>RGB=(128,192,255)</StartColor>
+        <EndColor>RGB=(255,128,128)</EndColor>
+        <ShadingMethod>WideRainbow</ShadingMethod>
+        <ShadesPerInterval>1</ShadesPerInterval>
+        <AutoContour>true</AutoContour>
+      </Contour>
+      <Contour>
+        <Name>Temperature</Name>
+        <Type>Temperature</Type>
+        <MinLevel Missing="true" />
+        <LevelIncrement Missing="true" />
+        <NumOfLines Missing="true" />
+        <StartColor>RGB=(128,192,255)</StartColor>
+        <EndColor>RGB=(255,128,128)</EndColor>
+        <ShadingMethod>WideRainbow</ShadingMethod>
+        <ShadesPerInterval>1</ShadesPerInterval>
+        <AutoContour>true</AutoContour>
+      </Contour>
+      <Contour>
+        <Name>Concentration</Name>
+        <Type>Concentration</Type>
+        <MinLevel Missing="true" />
+        <LevelIncrement Missing="true" />
+        <NumOfLines Missing="true" />
+        <StartColor>RGB=(128,192,255)</StartColor>
+        <EndColor>RGB=(255,128,128)</EndColor>
+        <ShadingMethod>WideRainbow</ShadingMethod>
+        <ShadesPerInterval>1</ShadesPerInterval>
+        <AutoContour>true</AutoContour>
+      </Contour>
+      <Contour>
+        <Name>Gas Concentration</Name>
+        <Type>GasConcentration</Type>
+        <MinLevel Missing="true" />
+        <LevelIncrement Missing="true" />
+        <NumOfLines Missing="true" />
+        <StartColor>RGB=(128,192,255)</StartColor>
+        <EndColor>RGB=(255,128,128)</EndColor>
+        <ShadingMethod>WideRainbow</ShadingMethod>
+        <ShadesPerInterval>1</ShadesPerInterval>
+        <AutoContour>true</AutoContour>
+      </Contour>
+      <Contour>
+        <Name>Air Pressure</Name>
+        <Type>AirPressure</Type>
+        <MinLevel Missing="true" />
+        <LevelIncrement Missing="true" />
+        <NumOfLines Missing="true" />
+        <StartColor>RGB=(128,192,255)</StartColor>
+        <EndColor>RGB=(255,128,128)</EndColor>
+        <ShadingMethod>WideRainbow</ShadingMethod>
+        <ShadesPerInterval>1</ShadesPerInterval>
+        <AutoContour>true</AutoContour>
+      </Contour>
+    </Contours>
+    <SlipContours Len="1">
+      <SlipContour>
+        <Type>ViewSlipFOS</Type>
+        <MinLevel>1</MinLevel>
+        <LevelIncrement>0.1</LevelIncrement>
+        <NumOfLines>11</NumOfLines>
+        <StartColor>RGB=(255,0,0)</StartColor>
+        <EndColor>RGB=(0,0,255)</EndColor>
+        <ShadingMethod>WideRainbow</ShadingMethod>
+        <ShadesPerInterval>1</ShadesPerInterval>
+        <ExtendColors>true</ExtendColors>
+        <MinValueOption>UseMin</MinValueOption>
+      </SlipContour>
+    </SlipContours>
+    <Window>
+      <Base Y="-2032" />
+      <Zoom>1</Zoom>
+    </Window>
+    <VisibleUnitSets>
+      <VisibleUnitsByUnitKind Len="2">
+        <VisibleUnitsByUnitKind_>
+          <UnitKind>Time</UnitKind>
+          <Units Time="Days" />
+        </VisibleUnitsByUnitKind_>
+        <VisibleUnitsByUnitKind_>
+          <UnitKind>Concentration</UnitKind>
+          <Units Mass="g" />
+        </VisibleUnitsByUnitKind_>
+      </VisibleUnitsByUnitKind>
+      <VisibleBaseUnits Mass="kg" />
+    </VisibleUnitSets>
+    <Font>
+      <FontInfo FaceName="Arial" />
+      <NodeNumberSize>6</NodeNumberSize>
+      <ElementNumberSize>6</ElementNumberSize>
+      <AxisSize>10</AxisSize>
+      <PointNumberSize>10</PointNumberSize>
+      <RegionNumberSize>12</RegionNumberSize>
+    </Font>
+    <GlobalUserOptions PondingColor="RGB=(200,240,255)" />
+    <Legends>
+      <ContourLegendDef>
+        <FontSize>10</FontSize>
+        <TitleFontSize>10</TitleFontSize>
+      </ContourLegendDef>
+      <FOSContourLegendDef>
+        <FontSize>10</FontSize>
+        <TitleFontSize>10</TitleFontSize>
+      </FOSContourLegendDef>
+      <MaterialLegendDef>
+        <FontSize>10</FontSize>
+        <TitleFontSize>10</TitleFontSize>
+      </MaterialLegendDef>
+      <ColumnContourLegendDef>
+        <FontSize>10</FontSize>
+        <TitleFontSize>10</TitleFontSize>
+      </ColumnContourLegendDef>
+    </Legends>
+    <AnalysisLastViewed Missing="true" />
+    <GeometryLastViewed>2D Geometry</GeometryLastViewed>
+    <ViewMode>Define</ViewMode>
+  </View>
+</GSIData>
