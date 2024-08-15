@@ -2,7 +2,6 @@ import json
 import pandas as pd
 from src.topography import generate_topography_from_json, generate_topography_direct
 from src.geostudio_xml import generate_geostudio_file
-from src.point import Point
 from typing import List
 import math
 from shapely.ops import linemerge, unary_union, polygonize
@@ -12,7 +11,7 @@ import matplotlib.pyplot as plt
 import geopandas as gpd
 from shapely.geometry import Polygon, LineString
 import xlwings as xw
-from src.utils import find_project_root
+from src.utils import find_project_root, Point
 
 
 class Stratigraphy:
